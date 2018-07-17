@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
 @RestController
-@RequestMapping(path="/api/v1/bikes")
+@RequestMapping(path="/api")
 public class UserController {
 
     @Autowired
@@ -21,7 +21,7 @@ public class UserController {
         return userRepository.findAll();
     }
 
-    @GetMapping(path="/add") // Map ONLY GET Requests
+    @PostMapping(path="/add") // Map ONLY GET Requests
     public @ResponseBody String addNewUser (@RequestParam String name
             , @RequestParam String email, @RequestParam String password) {
         // @ResponseBody means the returned String is the response, not a view name
